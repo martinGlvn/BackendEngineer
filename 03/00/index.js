@@ -1,10 +1,17 @@
 console.clear();
-import { createServer } from "http";
+import createExpressServer from "express";
 
-// event & listener
-const httpServer = createServer((req, res) => {
-  console.log("receiv req");
-  res.end("receiv");
+const PORT = 3000;
+const expressApp = createExpressServer();
+
+// function get
+expressApp.get("/profile/:id", (req, res) => {
+  console.log(req.params.id);
+  res.send("my account personal");
 });
 
-httpServer.listen(3000);
+expressApp.listen(3000, () => {
+  console.log(`listen port ${PORT}`);
+});
+
+// event & listener
