@@ -1,13 +1,15 @@
 console.clear();
-import createExpressServer from "express";
+import express from "express";
 
 const PORT = 3000;
-const expressApp = createExpressServer();
+const expressApp = express();
+
+expressApp.use(express.json());
+expressApp.use(express.text());
 
 // function get
 expressApp.get("/profile/:id", (req, res) => {
-  console.log(req.params.id);
-  res.send("my account personal");
+  res.send();
 });
 
 expressApp.listen(3000, () => {
