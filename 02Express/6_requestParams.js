@@ -1,18 +1,26 @@
 const express = require("express");
+const { root } = require("terraform");
 
 //
 const app = express();
 
-// proceso de peticiones => texto, json, form
-app.use(express.text());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-// envio de datos desde el cliente => servidor
-app.post("/user", (req, res) => {
-  res.send("new user create");
+//
+app.get("/hello/:user", (req, res) => {
+  console.log(req.params.user);
+  res.send(`hi ${req.params.user}`);
 });
-
+//
+app.get("/add/:x/:y", (req, res) => {
+  const { x, y } = req.params;
+  res.send(`sum of x + y is ${parseInt(x) + parseInt(y)}`);
+});
+//
+app.get("/users/:username/photo", (req, res) => {
+  if (req.params.username === "martin") {
+    return res.sendFile("./me2.jpg", { root: __dirname });
+  }
+  res.send("not found");
+});
 // cfg sv
 app.listen(3000);
 console.log("sv on port 3000");
