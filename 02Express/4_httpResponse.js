@@ -6,18 +6,21 @@ const app = express();
 app.get("/products", (req, res) => {
   res.send("productos");
 });
-app.post("/products", (req, res) => {
-  res.send("creando productos");
+app.get("/archivo", (req, res) => {
+  res.sendFile("./me.png", { root: __dirname });
 });
-app.put("/products", (req, res) => {
-  res.send("actualizando productos");
+app.get("/user", (req, res) => {
+  res.json({
+    name: "martin",
+    lastname: "jeje",
+    age: 30,
+    address: { city: "jaja", street: "juju" },
+  });
 });
-app.delete("/products", (req, res) => {
-  res.send("eliminando productos");
+app.get("/isAlive", (req, res) => {
+  res.sendStatus(204);
 });
-app.patch("/products", (req, res) => {
-  res.send("actualizando una parte de los productos");
-});
+
 // cfg sv
 app.listen(3000);
 console.log("sv on port 3000");
