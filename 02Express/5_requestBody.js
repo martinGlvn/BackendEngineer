@@ -3,23 +3,14 @@ const express = require("express");
 //
 const app = express();
 
-// http methods
-app.get("/products", (req, res) => {
-  res.send("productos");
-});
-app.get("/archivo", (req, res) => {
-  res.sendFile("./me.png", { root: __dirname });
-});
-app.get("/user", (req, res) => {
-  res.json({
-    name: "martin",
-    lastname: "jeje",
-    age: 30,
-    address: { city: "jaja", street: "juju" },
-  });
-});
-app.get("/isAlive", (req, res) => {
-  res.sendStatus(204);
+// proceso de peticiones => texto, json, form
+app.use(express.text());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+// envio de datos desde el cliente => servidor
+app.post("/user", (req, res) => {
+  res.send("new user create");
 });
 
 // cfg sv
