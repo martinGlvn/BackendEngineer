@@ -1,10 +1,15 @@
 const http = require("http");
 
+// port
+const desiredPort = 1234;
+
+// sv
 const server = http.createServer((req, res) => {
-  console.log("request received");
+  console.log("req received", req.url);
   res.end("hi");
 });
 
-server.listen(0, () => {
-  console.log(`server listen port : http://localhost:${server.address().port}`);
+// listen sv
+server.listen(desiredPort, () => {
+  console.log(`sv listen on port ${desiredPort}`);
 });
