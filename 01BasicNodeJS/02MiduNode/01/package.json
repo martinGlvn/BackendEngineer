@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon http.js"
+    "dev": "nodemon 2_express.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,8 @@
   "devDependencies": {
     "nodemon": "^3.0.1",
     "standard": "^17.1.0"
+  },
+  "dependencies": {
+    "express": "4.18.2"
   }
 }

@@ -29,7 +29,7 @@ const processRequest = (req, res) => {
   }
 };
 
-//
+// function as param
 const server = http.createServer(processRequest);
 
 // listen sv
