@@ -1,0 +1,1 @@
+- deprecated form "import" & "export" modules

@@ -1,0 +1,17 @@
+{
+  "name": "npm_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "npm.js",
+  "scripts": {
+    "start": "node npm.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
