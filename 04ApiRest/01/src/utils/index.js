@@ -1,7 +1,7 @@
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
-const __filenama = fileURLToPath(import.meta.url);
-const __dirname = __dirname(__filenama);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = __dirname(__filename);
 
 export default __dirname;

@@ -13,7 +13,9 @@ const app = express();
 const PORT_APP = PORT || 5000;
 const API_PREFIX = "api";
 
-// globals middlewares
+// globals middlewares =>
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParse());
 app.use(hpp());
 app.use(helmet());
