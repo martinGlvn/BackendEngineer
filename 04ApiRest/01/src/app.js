@@ -6,6 +6,7 @@ import helmet from "helmet";
 import cors from "cors";
 import displayRoutes from "express-routemap";
 import corsConfig from "./config/cors.config.js";
+import superheoresRoutes from "./routes/superheroes.routes.js";
 
 //
 const app = express();
@@ -22,6 +23,9 @@ app.use(cors(corsConfig));
 app.use(`/${API_PREFIX}/${API_VERSION}/alive`, (req, res) => {
   res.json({ ok: true, message: "Api is alive" });
 });
+
+//
+app.use(`/${API_PREFIX}/${API_VERSION}/superheroes`, superheoresRoutes);
 
 app.listen(PORT_APP, () => {
   displayRoutes(app);
