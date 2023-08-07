@@ -1,5 +1,5 @@
 import express from "express";
-import { API_VERSION, PORT } from "./src/config/config.js";
+import { API_VERSION, PORT } from "./config/config.js";
 
 //
 const app = express();
