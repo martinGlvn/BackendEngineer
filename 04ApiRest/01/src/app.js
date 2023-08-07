@@ -5,6 +5,7 @@ import hpp from "hpp";
 import helmet from "helmet";
 import cors from "cors";
 import displayRoutes from "express-routemap";
+import corsConfig from "./config/cors.config.js";
 
 //
 const app = express();
@@ -15,7 +16,7 @@ const API_PREFIX = "api";
 app.use(cookieParse());
 app.use(hpp());
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsConfig));
 
 // first method
 app.use(`/${API_PREFIX}/${API_VERSION}/alive`, (req, res) => {
