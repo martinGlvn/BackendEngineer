@@ -1,12 +1,8 @@
 // init app
-const { config } = require("dotenv");
+import { config } from "dotenv";
 
 config({
   path: `.env.${process.env.NODE_ENV || "development"}.local`,
 });
 
-const { PORT, NODE_ENV, API_VERSION } = process.env;
-
-module.exports = {
-  PORT,
-};
+export const { PORT, NODE_ENV, API_VERSION } = process.env;
