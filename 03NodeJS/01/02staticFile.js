@@ -2,12 +2,13 @@ const express = require("express");
 const app = express();
 const PORT = 5000;
 
-//GET =>
-app.get("/", (req, res) => {
-  res.send("welcome");
-});
-app.get("/martin", (req, res) => {
-  res.send("welcome");
+// middleware =>
+app.use(express.static("public"));
+
+// GET =>
+app.get("/formulario", (req, res) => {
+  res.send("formulario enviado " + req.query.nombre);
+  console.log(req.query);
 });
 
 app.listen(PORT, () => {

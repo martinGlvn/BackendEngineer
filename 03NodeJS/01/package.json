@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run app.js"
+    "dev": "nodemon 02staticFile.js"
   },
   "keywords": [],
   "author": "",
