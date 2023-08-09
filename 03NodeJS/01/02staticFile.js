@@ -1,4 +1,5 @@
 const express = require("express");
+const fs = require("fs");
 const app = express();
 const PORT = 5000;
 
@@ -14,6 +15,8 @@ app.use(express.urlencoded({ extended: true })); // leer req.body
 
 // POST => info viaja por body
 app.post("/formulario", (req, res) => {
+  const { nombre, apellido } = req.body;
+  if (!nombre || !apellido) return res.redirect("/error.html");
   res.send("formulario enviado " + req.body.nombre);
   console.log(req.body.nombre);
 });
