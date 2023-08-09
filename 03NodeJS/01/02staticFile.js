@@ -17,6 +17,10 @@ app.use(express.urlencoded({ extended: true })); // leer req.body
 app.post("/formulario", (req, res) => {
   const { nombre, apellido } = req.body;
   if (!nombre || !apellido) return res.redirect("/error.html");
+  fs.writeFileSync(`${nombre}.txt`, apellido, (err) => {
+    if (err) return res.send("fail");
+    res.send("se creo el archivo");
+  });
   res.send("formulario enviado " + req.body.nombre);
   console.log(req.body.nombre);
 });
