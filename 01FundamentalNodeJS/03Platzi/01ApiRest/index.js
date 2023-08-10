@@ -2,9 +2,17 @@ const express = require('express');
 const app = express();
 const PORT = 5000;
 
-// methods => get
+// Routing
 app.get('/', (req, res) => {
   res.send('sv in express');
+});
+
+app.get('/ruta', (req, res) => {
+  res.send('ruta');
+});
+
+app.get('/productos', (req, res) => {
+  res.json({ name: 'product1', price: '$500' });
 });
 
 // App listen port
