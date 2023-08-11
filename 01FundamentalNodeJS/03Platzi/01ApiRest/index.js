@@ -1,4 +1,5 @@
 const express = require('express');
+const faker = require('faker');
 const app = express();
 const PORT = 5000;
 
@@ -12,10 +13,17 @@ app.get('/ruta', (req, res) => {
 });
 
 app.get('/productos', (req, res) => {
-  res.json([
-    { name: 'product1', price: '$500' },
-    { name: 'product2', price: '$1500' },
-  ]);
+  const productos = [];
+  const { tamaño } = req.query;
+  const limite = tamaño || 10;
+  for (let i = 0; i < limite; i++) {
+    productos.push({
+      name: faker.commerce.productName(),
+      price: parseInt(faker.commerce.price()),
+      image: faker.image.imageUrl(),
+    });
+  }
+  res.json(productos);
 });
 
 app.get('/productos/:id', (req, res) => {
@@ -26,6 +34,16 @@ app.get('/productos/:id', (req, res) => {
 app.get('/categorias/:categoriaId/productos/:productosId', (req, res) => {
   const { categoriaId, productosId } = req.params;
   res.json({ categoriaId, productosId });
+});
+
+// GET QueryParams =>
+app.get('/usuarios', (req, res) => {
+  const { limit, offset } = req.query;
+  if (limit && offset) {
+    res.json(limit, offset);
+  } else {
+    res.send('no hay parametros');
+  }
 });
 
 // App listen port
