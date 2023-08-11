@@ -5,8 +5,11 @@ const movies = require("./movies.json");
 const { validatePartialMovie } = require("./schemas/movies");
 const app = express();
 const PORT = 3000;
-app.use(express.json());
+
 app.disable("x-powered-by");
+
+// Middlewares
+app.use(express.json());
 
 // Todos los recursos que sean MOVIES se identifican con /movies
 app.get("/movies", (req, res) => {
@@ -22,7 +25,7 @@ app.get("/movies", (req, res) => {
 
 // Recuperamos 1 pelicula por id
 app.get("/movies/:id", (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params; //almanenamos el id
   const movie = movies.find((movie) => movie.id === id);
   if (movie) return res.json(movie);
   res.status(404).json({ message: "movie not found" });
