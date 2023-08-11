@@ -36,7 +36,6 @@ app.get('/categorias/:categoriaId/productos/:productosId', (req, res) => {
   res.json({ categoriaId, productosId });
 });
 
-// GET QueryParams =>
 app.get('/usuarios', (req, res) => {
   const { limit, offset } = req.query;
   if (limit && offset) {
@@ -46,7 +45,7 @@ app.get('/usuarios', (req, res) => {
   }
 });
 
-// App listen port
+// App listen port =>
 app.listen(PORT, () => {
   console.log('running sv on port 5000');
 });
