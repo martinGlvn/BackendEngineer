@@ -1,29 +1,14 @@
 const express = require('express');
+const routerApi = require('./routes');
 const app = express();
 const PORT = 5000;
 
-// Routing => GET
 app.get('/', (req, res) => {
-  res.send('sv in express');
+  res.send('hi');
 });
 
-app.get('/ruta', (req, res) => {
-  res.send('ruta');
-});
-
-app.get('/categorias/:categoriaId/productos/:productosId', (req, res) => {
-  const { categoriaId, productosId } = req.params;
-  res.json({ categoriaId, productosId });
-});
-
-app.get('/usuarios', (req, res) => {
-  const { limit, offset } = req.query;
-  if (limit && offset) {
-    res.json(limit, offset);
-  } else {
-    res.send('no hay parametros');
-  }
-});
+//
+routerApi(app);
 
 // App listen port =>
 app.listen(PORT, () => {
