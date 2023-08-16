@@ -1,10 +1,9 @@
 const colors = require("colors");
-console.log(console.clear);
+const { mostrarMenu } = require("./helpers/mensajes");
 
 //Recibir input =>
 const main = async () => {
-  console.log("hi");
-  colors.america(console.log("hi"));
+  mostrarMenu();
 };
 main();
 
