@@ -1,4 +1,4 @@
-// packg fs=>
+// module fs=>
 const fs = require("fs");
 
 // leer contenido de archivo => "Sincrono"
