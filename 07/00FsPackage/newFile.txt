@@ -1,0 +1,1 @@
+Contenido nuevo del archivo. Este contenido = "Hi my name is Martin" viene de "data.txt" creado en 1692389923245
