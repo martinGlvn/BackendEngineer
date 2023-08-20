@@ -1,19 +1,16 @@
 import "dotenv/config";
 import "./database/connectdb.js";
 import express from "express";
-import cors from "cors";
-import cookieParser from "cookie-parser";
-import authRoutes from "./routes/auth.route.js";
+import authRouter from "./routes/auth.route.js";
 
 //
 const app = express();
 
-const PORT = 5000;
+// routes -> middleware
+app.use("/api/v1/", authRouter); //auth.route
 
-app.get("/", (req, res) => {
-  console.log("hi");
-});
-
+//
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log("");
+  console.log("", +PORT);
 });
