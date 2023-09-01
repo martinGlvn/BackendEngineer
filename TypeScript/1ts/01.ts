@@ -4,7 +4,7 @@
 const names1: string[] = [];
 const names3: Array<string> = [];
 
-// Objets =>
+// Objects =>
 const myObject: Object = {
   name: "martin",
 };
@@ -20,4 +20,21 @@ myObject3.age = 25;
 myObject3.ageString = "25";
 myObject3.ageBool = true;
 
-//
+// Promesas =>
+const promise = async (): Promise<string> => {
+  return await new Promise((res, _rej) => {
+    setTimeout(() => {
+      res("hi");
+    }, 2000);
+  });
+};
+promise().then((r) => console.log(r));
+
+// Compuestos =>
+const objeto5: {
+  name: string;
+  age: number;
+} = {
+  age: 28,
+  name: "martin",
+};
