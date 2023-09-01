@@ -15,3 +15,10 @@ type ProductoBaseType = {
   paymentMethod: PaymentMethodType;
   nameClient: string;
 };
+
+// Herencia =>
+interface Fisica extends IProductoBase {
+  productName: string;
+  clientAddress: string;
+  quantity: number;
+}
