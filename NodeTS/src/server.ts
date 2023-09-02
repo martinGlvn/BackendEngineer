@@ -13,6 +13,12 @@ class ServerBootstrap {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(morgan("dev"));
     this.app.use(cors());
+
+    // routes =>
+    this.app.get("/api/hola", (req, res) => {
+      res.status(400).json({ message: "hello world" });
+    });
+
     this.listen();
   }
 
