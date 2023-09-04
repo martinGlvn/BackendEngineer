@@ -21,3 +21,19 @@ let hero: Hero2 = {
   name: "batman",
   age: 25,
 };
+
+// Union Types =>
+type ModelEnergy = "batery" | "fuel" | "oil";
+
+type Cars = {
+  name: string;
+  model: string;
+  isActive?: boolean; // PROPIEDAD OPCIONAL
+  energyModel: ModelEnergy;
+};
+
+let car: Cars = {
+  name: "audi",
+  model: "rs3",
+  energyModel: "batery",
+};
