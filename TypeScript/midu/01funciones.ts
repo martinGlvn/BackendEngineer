@@ -21,3 +21,9 @@ function throwError(message: string): never {
 function throwError2(message: string): void {
   throw new Error(message);
 }
+
+// ts realiza inferencia en la funcion "forEach" para saber que es una cadena de texto.
+const heroes = ["batman", "spiderman"];
+heroes.forEach((hero) => {
+  console.log(hero.toUpperCase());
+});
