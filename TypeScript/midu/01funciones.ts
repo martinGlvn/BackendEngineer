@@ -16,3 +16,8 @@ const sumar = (a: number, b: number): number => {
 function throwError(message: string): never {
   throw new Error(message);
 }
+
+// void => void si se termina de ejecutar aunque la funcion no devuelva nada
+function throwError2(message: string): void {
+  throw new Error(message);
+}
