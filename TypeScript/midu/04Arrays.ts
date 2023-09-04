@@ -11,3 +11,16 @@ languajes2.push("C++");
 // "x "or "y"
 const languajes3: (string | number)[] = [];
 languajes3.push("Rust");
+
+// GameBoardExample => Arrays&Tupla
+type CellValue = "X" | "O" | "";
+type GameBoard = [
+  [CellValue, CellValue, CellValue],
+  [CellValue, CellValue, CellValue],
+  [CellValue, CellValue, CellValue]
+];
+const gameBoard: GameBoard = [
+  ["X", "O", "X"],
+  ["X", "O", "X"],
+  ["X", "O", "X"],
+];
