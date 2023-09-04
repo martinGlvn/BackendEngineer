@@ -1,5 +1,4 @@
 // Clases => Plantilla de objetos
-
 class Persona {
   constructor(nombre, edad, altura) {
     this.nombre = nombre;
@@ -15,3 +14,16 @@ class Persona {
 
 const Martin = new Persona("martin", 10, 50);
 console.log(Martin);
+
+// Herencia => extension de una clase
+class Role extends Persona {
+  constructor(nombre, edad, altura) {
+    super(nombre, edad, altura);
+  }
+  roles() {
+    return `El ingeniero ${this.nombre} tiene ${this.edad}`;
+  }
+}
+console.log("--------------------");
+const rol = new Role("martin", 20, 50);
+console.log(rol);
