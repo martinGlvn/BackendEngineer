@@ -34,6 +34,6 @@ type Cars = {
 
 let car: Cars = {
   name: "audi",
-  model: "rs3",
+  model: "rs2",
   energyModel: "batery",
 };
