@@ -1,7 +1,7 @@
 // POO =>
 
 // Objetos Literales =>
-const persona = {
+const Persona = {
   name: "a",
   age: 25,
   z() {
