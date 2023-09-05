@@ -15,3 +15,6 @@ if (canvas2 instanceof HTMLCanvasElement) {
   // validamos que canvas2 sea un HTMLCanvasElement
   const c2 = canvas2.getContext("2d");
 }
+
+// ---------------------------------------------------------------------------------->
+// Acersiones fetching =>
